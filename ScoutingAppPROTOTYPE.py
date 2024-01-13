@@ -4,7 +4,6 @@ from tkinter import ttk
 # Prototype of possibilities with tkinter in Python
 # Ideas of what to add
     # if they got on the chain or not
-    # if they left starting area
     # if they got the coopertition bonus
     # laurens ideas
 
