@@ -11,6 +11,7 @@ scoreTotal = 0
 scoreAMP = 0
 scoreSpeaker = 0
 leaveInAuto = False
+coopertitionBonus = False
 
 windows = tk.Tk()
 windows.title("Scouting App PROTOTYPE")
@@ -65,6 +66,12 @@ def toggleLeaveInAuto():
     score.configure(text = "Score Total \n" + str(scoreTotal))
     leaveStartYesOrNo.configure(text = "Yes")
 
+def toggleCoopertitonBonus():
+    global coopertitionBonus
+
+    coopertitionBonus = True
+    coopertitionBonusYesOrNo.configure(text = "Yes")
+
 robotName = tk.Button(windows,
                     text = "Robot Number Input ->",
                     command = printTeamNumber)
@@ -98,12 +105,19 @@ speakerScoreAUTOButton.grid(column=1, row=2)
 speakerTotalScore = tk.Label(windows, text = "Speaker Total:")
 speakerTotalScore.grid(column=3, row=2)
 
-leaveStartArea = tk.Button(windows,
+leaveStartAreaButton = tk.Button(windows,
                            text = "Left Start-Area?",
                            command = toggleLeaveInAuto)
-leaveStartArea.grid(column=1,row=3)
+leaveStartAreaButton.grid(column=1,row=3)
 leaveStartYesOrNo = tk.Label(windows, text = "No")
 leaveStartYesOrNo.grid(column=3,row=3)
+
+coopertitionBonusButton = tk.Button(windows,
+                                    text = "Coopertition Bonus?",
+                                    command = toggleCoopertitonBonus)
+coopertitionBonusButton.grid(column=1,row=4)
+coopertitionBonusYesOrNo = tk.Label (windows, text = "No")
+coopertitionBonusYesOrNo.grid(column=3,row=4)
 
 score = tk.Label(windows, text = "Score Total \n 0", font = "Helvetica 10 bold")
 score.grid(column=3, row=5)
